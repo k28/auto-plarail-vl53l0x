@@ -3,20 +3,16 @@ from machine import Pin, I2C
 from vl53l0x import VL53L0X
 
 print("setting up i2c")
-sda = Pin(0)
-scl = Pin(1)
-id = 0
-
-#i2c_dev = I2C(0,scl=scl,sda=sda,freq=400000)
-#i2c_addr = [hex(ii) for ii in i2c_dev.scan()]
-#print(i2c_addr)
-
+sda = Pin(14)
+scl = Pin(15)
+id = 1
 
 i2c = I2C(id=id, sda=sda, scl=scl)
+#i2c = I2C(id=id)
 
-print(i2c.scan())
+print(repr(i2c.scan()))
 
-# print("creating vl53lox object")
+print("creating vl53lox object")
 # Create a VL53L0X object
 tof = VL53L0X(i2c)
 
