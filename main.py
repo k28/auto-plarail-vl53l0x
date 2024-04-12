@@ -70,6 +70,7 @@ in2 = Pin(13, Pin.OUT)
 
 plarail_controller = PlarailController(in1, in2)
 distance_controller = DistanceController(plarail_controller)
+plarail_controller.stop()
 
 while True:
     distance = distance_sensor.scan()
