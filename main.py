@@ -30,12 +30,12 @@ class PlarailController:
         self.in2.off()
     
     def forward(self):
-        self.in1.on()
-        self.in2.off()
-
-    def reverse(self):
         self.in1.off()
         self.in2.on()
+
+    def reverse(self):
+        self.in1.on()
+        self.in2.off()
 
 # 距離によって車両を制御するクラス
 class DistanceController:
